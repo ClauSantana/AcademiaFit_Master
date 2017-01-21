@@ -1,0 +1,126 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:decorate template="/index.xhtml">
+
+	<ui:define name="centro">
+
+		<h:form>
+			<p:messages id="messages" showDetail="true" autoUpdate="true"
+				closable="true" />
+
+			<p:fieldset legend="Cadastrar Professor" style="margin-bottom:20px">
+
+				<p:panelGrid columns="2">
+					<p:outputLabel value="Nome:"></p:outputLabel>
+					<p:inputText value="#{professorMbean.professor.nome}" />
+
+					<p:outputLabel value="CPF:"></p:outputLabel>
+					<p:inputMask value="#{professorMbean.professor.cpf}"
+						mask="999.999.999-99" />
+
+					<p:outputLabel value="Nickname:" />
+					<p:selectOneMenu id="usuario"
+						value="#{professorMbean.usuario.nickname}" style="width:125px">
+						<f:selectItem itemLabel="Selecione" itemValue="null" />
+						<f:selectItems value="#{professorMbean.listaUsuarioVO}"
+							var="usuario" itemLabel="#{usuario.nickname}"
+							itemValue="#{usuario.nickname}" />
+					</p:selectOneMenu>
+
+					<p:outputLabel for="button" value="Data de Nascimento:" />
+					<p:calendar id="button"
+						value="#{professorMbean.professor.dtnascimento}" showOn="button"
+						pattern="dd-MM-yyyy" mask="true" />
+
+					<p:outputLabel value="Logradouro:"></p:outputLabel>
+					<p:inputText value="#{professorMbean.professor.end}" />
+
+					<p:outputLabel value="Bairro:"></p:outputLabel>
+					<p:inputText value="#{professorMbean.professor.bairro}" />
+
+					<p:outputLabel value="Cidade:"></p:outputLabel>
+					<p:inputText value="#{professorMbean.professor.cidade}" />
+
+					<p:outputLabel for="consoleEstado" value="Estado:" />
+					<p:selectOneMenu id="consoleEstado"
+						value="#{professorMbean.professor.estado}" style="width:125px">
+						<f:selectItem itemLabel="AC" itemValue="AC" />
+						<f:selectItem itemLabel="AL" itemValue="AL" />
+						<f:selectItem itemLabel="AP" itemValue="AP" />
+						<f:selectItem itemLabel="AM" itemValue="AM" />
+						<f:selectItem itemLabel="BA" itemValue="BA" />
+						<f:selectItem itemLabel="CE" itemValue="CE" />
+						<f:selectItem itemLabel="DF" itemValue="DF" />
+						<f:selectItem itemLabel="ES" itemValue="ES" />
+						<f:selectItem itemLabel="GO" itemValue="GO" />
+						<f:selectItem itemLabel="MA" itemValue="MA" />
+						<f:selectItem itemLabel="MT" itemValue="MT" />
+						<f:selectItem itemLabel="MS" itemValue="MS" />
+						<f:selectItem itemLabel="MG" itemValue="MG" />
+						<f:selectItem itemLabel="PA" itemValue="PA" />
+						<f:selectItem itemLabel="PB" itemValue="PB" />
+						<f:selectItem itemLabel="PR" itemValue="PR" />
+						<f:selectItem itemLabel="PE" itemValue="PE" />
+						<f:selectItem itemLabel="PI" itemValue="PI" />
+						<f:selectItem itemLabel="RJ" itemValue="RJ" />
+						<f:selectItem itemLabel="RN" itemValue="RN" />
+						<f:selectItem itemLabel="RS" itemValue="RS" />
+						<f:selectItem itemLabel="RO" itemValue="RO" />
+						<f:selectItem itemLabel="RR" itemValue="RR" />
+						<f:selectItem itemLabel="SC" itemValue="SC" />
+						<f:selectItem itemLabel="SP" itemValue="SP" />
+						<f:selectItem itemLabel="SE" itemValue="SE" />
+						<f:selectItem itemLabel="TO" itemValue="TO" />
+					</p:selectOneMenu>
+
+					<p:outputLabel value="Telefone:"></p:outputLabel>
+					<p:inputText value="#{professorMbean.professor.fone}"
+						mask="(99)99999-9999" />
+
+					<p:outputLabel for="consoleSexo" value="Sexo:" />
+					<p:selectOneMenu id="consoleSexo"
+						value="#{professorMbean.professor.sexo}" style="width:125px">
+						<f:selectItem itemLabel="Feminino" itemValue="F" />
+						<f:selectItem itemLabel="Masculino" itemValue="M" />
+					</p:selectOneMenu>
+
+					<p:outputLabel for="button1" value="Data de Contrato:" />
+					<p:calendar id="button1"
+						value="#{professorMbean.professor.datacontrato}" showOn="button"
+						pattern="dd-MM-yyyy" mask="true" />
+
+					<p:outputLabel for="consoleEscolaridade" value="Escolaridade:" />
+					<p:selectOneMenu id="consoleEscolaridade"
+						value="#{professorMbean.professor.escolaridade}"
+						style="width:125px">
+						<f:selectItem itemLabel="Primeiro Grau" itemValue="Primeiro Grau" />
+						<f:selectItem itemLabel="Segundo Grau" itemValue="Segundo Grau" />
+						<f:selectItem itemLabel="Superior" itemValue="Superior" />
+					</p:selectOneMenu>
+
+					<p:outputLabel for="consoleHorario" value="Horário:"></p:outputLabel>
+					<p:selectOneMenu id="consoleHorario"
+						value="#{professorMbean.professor.horario}" style="width:125px">
+						<f:selectItem itemLabel="Manhã" itemValue="Manhã" />
+						<f:selectItem itemLabel="Tarde" itemValue="Tarde" />
+						<f:selectItem itemLabel="Noite" itemValue="Noite" />
+					</p:selectOneMenu>
+
+				</p:panelGrid>
+			</p:fieldset>
+
+			<p:separator />
+
+			<p:commandButton value="Salvar" action="#{professorMbean.incluir}"
+				update="messages" />
+
+		</h:form>
+
+	</ui:define>
+</ui:decorate>
+
+</html>

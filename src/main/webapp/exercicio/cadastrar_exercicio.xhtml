@@ -1,0 +1,46 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:decorate template="/index.xhtml">
+
+	<ui:define name="centro">
+
+		<h:form>
+			<p:messages id="messages" showDetail="true" autoUpdate="true"
+				closable="true" />
+
+			<p:fieldset legend="Cadastrar Exercício" style="margin-bottom:20px">
+
+				<p:panelGrid columns="2">
+					<p:outputLabel value="Exercicios:"></p:outputLabel>
+					<p:inputText value="#{exercicioMbean.exercicio.exercicio}" />
+					
+					<p:outputLabel value="Musculo:"></p:outputLabel>
+					<p:inputText value="#{exercicioMbean.exercicio.musculo}" />
+					
+					<p:outputLabel value="Maquinário:" />
+					<p:selectOneMenu id="maquinario"
+						value="#{exercicioMbean.maquinario.id}" style="width:125px">
+						<f:selectItem itemLabel="Selecione" itemValue="0" />
+						<f:selectItems value="#{exercicioMbean.listaMaquinarioVO}"
+						var="maquinario" itemLabel="#{maquinario.nome}" itemValue="#{maquinario.id}" />
+					</p:selectOneMenu>
+
+				</p:panelGrid>
+
+			</p:fieldset>
+
+			<p:separator />
+
+			<p:commandButton value="Salvar" action="#{exercicioMbean.incluir}"
+				update="messages" />
+
+		</h:form>
+
+	</ui:define>
+</ui:decorate>
+
+</html>
