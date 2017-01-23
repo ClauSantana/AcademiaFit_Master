@@ -40,6 +40,8 @@ public class ConverterProfessor {
 		professorVO.setEstado(professor.getEstado());
 		professorVO.setFone(professor.getFone());
 		professorVO.setSexo(professor.getSexo());
+		professorVO.setDatacontrato(professor.getDatacontrato());
+		professorVO.setEscolaridade(professor.getEscolaridade());
 		professorVO.setHorario(professor.getHorario());
 		
 		return professorVO;
