@@ -117,14 +117,14 @@ public class TreinoController extends AbstractController {
 		return TELA_LISTA_TODOS;
 	}
 
-	public String incluir() {
-		try{
+	public String incluir() throws BusinessException{
+		//try{
 			treinoService.incluir(treino);
 			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,null,"Treino salvo com sucesso!"));
 
-		}catch (BusinessException exception){
-			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,null,exception.getMessage()));
-		}		
+	//	}catch (BusinessException exception){
+	//		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,null,exception.getMessage()));
+	//	}		
 		return "";
 	}
 
