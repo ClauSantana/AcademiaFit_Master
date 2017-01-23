@@ -21,34 +21,11 @@ public class Cliente extends Pessoa{
 	@Column(name = "DATACADASTRO")
 	private Date datacadastro;
 	
-	@OneToMany
-	private List<AvaliacaoFisica> listaAvaliacaoFisica;
-	
-	@OneToMany
-	private List<Treino> listaTreino;
-
 	public Date getDatacadastro() {
 		return datacadastro;
 	}
 
 	public void setDatacadastro(Date datacadastro) {
 		this.datacadastro = datacadastro;
-	}
-
-	public List<AvaliacaoFisica> getListaAvaliacaoFisica() {
-		return listaAvaliacaoFisica;
-	}
-
-	public void setListaAvaliacaoFisica(List<AvaliacaoFisica> listaAvaliacaoFisica) {
-		this.listaAvaliacaoFisica = listaAvaliacaoFisica;
-	}
-
-	public List<Treino> getListaTreino() {
-		return listaTreino;
-	}
-
-	public void setListaTreino(List<Treino> listaTreino) {
-		this.listaTreino = listaTreino;
-	}
-	
+	}	
 }

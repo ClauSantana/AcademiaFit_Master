@@ -8,5 +8,5 @@ public interface ClienteDAO {
 	public void alterar(Cliente cliente);
 	public Cliente consultarPorId(long index);
 	public List<Cliente> listarTodos();
-	public void excluir(long index);
+	public void excluir(String index);
 }

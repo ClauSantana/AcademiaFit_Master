@@ -88,7 +88,7 @@ public class UsuarioController extends AbstractController{
 		}catch (BusinessException exception){
 			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,null,exception.getMessage()));
 		}
-		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,null,"Usuario salvo com sucesso!"));
+		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,null,"Usuario excluído com sucesso!"));
 		return "";
 	}
 	

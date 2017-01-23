@@ -28,7 +28,7 @@ public class ClienteServiceImpl implements ClienteService{
 	@Override
 	@Transactional
 	public void excluir(ClienteVO cliente) {
-		dao.excluir(cliente.getId());
+		dao.excluir(cliente.getCpf());
 		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Cliente excluido com sucesso"));
 	}
 

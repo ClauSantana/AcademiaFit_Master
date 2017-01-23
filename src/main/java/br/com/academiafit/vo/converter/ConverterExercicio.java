@@ -12,14 +12,14 @@ public class ConverterExercicio {
 		Exercicio exercicio = new Exercicio();
 		exercicio.setId(exercicioVO.getId());
 		exercicio.setMusculo(exercicioVO.getMusculo());
-		exercicio.setExercicio(exercicio.getExercicio());
+		exercicio.setExercicio(exercicioVO.getExercicio());
 			
 		return exercicio;
 	}
 	
 	public static ExercicioVO ConverterExercicioParaExercicioVO(Exercicio exercicio) {
 		ExercicioVO exercicioVO = new ExercicioVO();
-		exercicioVO.setExercicio(exercicio.getExercicio());
+		exercicioVO.setId(exercicio.getId());
 		exercicioVO.setMusculo(exercicio.getMusculo());
 		exercicioVO.setExercicio(exercicio.getExercicio());
 		

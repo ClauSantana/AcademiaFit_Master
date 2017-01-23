@@ -36,7 +36,7 @@ public class ClienteDAOImpl extends AbstractDAOImpl implements ClienteDAO{
 	}
 
 	@Override
-	public void excluir(long index) {
+	public void excluir(String index) {
 		Cliente cliente = super.getEntityManager().find(Cliente.class,index);
 		super.getEntityManager().remove(cliente);
 	}
